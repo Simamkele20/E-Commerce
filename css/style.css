@@ -1,0 +1,83 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary: black;
+    --secondary: rgb(255, 255, 255);
+    --awesome: hsl(135, 53%, 37%, .7);
+}
+
+body{
+    background-color: var(--awesome) ;
+}
+
+#Header{
+      text-align: center;
+}
+
+h1{
+  color: aliceblue;
+  margin: 20px ;
+}
+
+
+.container {
+    margin-block: 20px;
+    --numbOfRed: 123;
+    --numbOfOrange: 100;
+    --numbOfYellow: 18;
+    border-width: 5px 8px;
+    border-image: radial-gradient(120deg, var(--numbOfRed), var(--numbOfOrange), var(--numbOfYellow));
+}
+
+.container :is(#example1, #example2), 
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: .6rem;
+}
+
+.container :is(#example2) {
+    flex-flow: row wrap; }
+
+    .item {
+        display:inline-flex;
+        grid-template-rows: 10rem 1fr auto;
+    }
+
+    .item>img{
+        width: 10rem;
+        aspect-ratio: 1/1;
+    }
+
+    .button-wrapper {
+        justify-content: space-between;}
+
+        .button-wrapper button {
+            border: 3px solid;
+            border-image: linear-gradient( rgb(130, 120, 120), var(--awesome)) 11 fill;
+        }
+
+        .image-animation { 
+            height: 300px;
+            }
+
+            img[alt="Image"]{
+                width: 10rem;
+                aspect-ratio: 3/4;
+                animation: animateLaptop 5s infinite;
+                transition: all .5s;
+            }
+            @keyframes animateLaptop {
+           
+                from {
+                   transform: translateX(0px);
+                }
+                to{
+                   transform: translateX(calc(100vw - 100px)) scale(1, 1) rotateX(123deg);
+                }
+            }            
