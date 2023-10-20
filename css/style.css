@@ -6,13 +6,113 @@
     box-sizing: border-box;
 }
 :root{
-    --primary: black;
-    --secondary: rgb(255, 255, 255);
-    --awesome: hsl(135, 53%, 37%, .7);
+    --primary:#e1b382;
+    --secondary: #c89666;
+    --awesome:  rgba(253, 253, 253, 0.737);
 }
 
-body{
-    background-color: var(--awesome) ;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: -webkit-sticky; /* Safari */
+  position: fixed;
+  top: 0;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    background-color: #000;
+  }
+  
+  .text-container {
+    height: 90vh;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .text-container h1{
+    margin: 0;
+    font-size: 150px;
+    color: rgba(225,225,225, .01);
+    background-image: url("https://i.postimg.cc/xTL12ygx/download-3.jpg");
+    background-repeat: repeat;
+    -webkit-background-clip:text;
+    animation: animate 15s ease-in-out infinite;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  
+    @keyframes animate {
+      0%, 40%{
+        background-position: left top;
+      }
+      10%{
+        background-position: right bottom;
+       }
+      40% {
+        background-position: left bottom;
+      }
+      40%{
+        background-position: right top;
+      }   
+  }
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+    background-color: var(--primary);
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+
+input[type=submit] {
+  background-color: var(--secondary);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+   background-color: #302626;
+  padding: 20px;
 }
 
 #Header{
@@ -20,9 +120,15 @@ body{
 }
 
 h1{
-  color: aliceblue;
-  margin: 20px ;
+  color:var(--primary);
+  margin: 60px ;
+  text-align: center;
 }
+h2{
+    color:wheat;
+    margin: 80px ;
+    text-align: center;
+  }
 
 
 .container {
@@ -37,47 +143,134 @@ h1{
 .container :is(#example1, #example2), 
 .button-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     gap: .6rem;
 }
 
-.container :is(#example2) {
+p{
+    color: var(--primary) ;
+}
+
+.container :is(#example1, #example2) {
     flex-flow: row wrap; }
 
     .item {
         display:inline-flex;
+        flex-direction: column;
         grid-template-rows: 10rem 1fr auto;
     }
 
     .item>img{
-        width: 10rem;
+        width: 15rem;
         aspect-ratio: 1/1;
     }
 
     .button-wrapper {
-        justify-content: space-between;}
+        justify-content:flex-start;
+    }
 
         .button-wrapper button {
             border: 3px solid;
-            border-image: linear-gradient( rgb(130, 120, 120), var(--awesome)) 11 fill;
+            border-image: linear-gradient( var(--secondary), var(--primary)) 11 fill;
+            cursor: pointer;
         }
 
-        .image-animation { 
-            height: 300px;
-            }
+        h1.Money{
+            color: aliceblue;
+            display: flex;
+            
+        }
 
-            img[alt="Image"]{
-                width: 10rem;
-                aspect-ratio: 3/4;
-                animation: animateLaptop 5s infinite;
-                transition: all .5s;
+    
+          
+        table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            table-layout: fixed;
+          }
+          
+          table caption {
+            font-size: 1.5em;
+            margin: .5em 0 .75em;
+          }
+          
+          table tr {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: .35em;
+          }
+          
+          table th,
+          table td {
+            padding: .625em;
+            text-align: center;
+          }
+          
+          table th {
+            font-size: .85em;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+          }
+          
+          @media screen and (max-width: 600px) {
+            table {
+              border: 0;
             }
-            @keyframes animateLaptop {
-           
-                from {
-                   transform: translateX(0px);
-                }
-                to{
-                   transform: translateX(calc(100vw - 100px)) scale(1, 1) rotateX(123deg);
-                }
-            }            
+          
+            table caption {
+              font-size: 1.3em;
+            }
+            
+            table thead {
+              border: none;
+              clip: rect(0 0 0 0);
+              height: 1px;
+              margin: -1px;
+              overflow: hidden;
+              padding: 0;
+              position: absolute;
+              width: 1px;
+            }
+            
+            table tr {
+              border-bottom: 3px solid #ddd;
+              display: block;
+              margin-bottom: .625em;
+            }
+            
+            table td {
+              border-bottom: 1px solid #ddd;
+              display: block;
+              font-size: .8em;
+              text-align: right;
+            }
+            
+            table td::before {
+            
+              content: attr(data-label);
+              float: left;
+              font-weight: bold;
+              text-transform: uppercase;
+            }
+            
+            table td:last-child {
+              border-bottom: 0;
+            }
+          }
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+            
