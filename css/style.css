@@ -382,12 +382,12 @@ p{
 
           .back-button {
             position: absolute;
-            text-indent: 3px;
+            text-indent: 0px;
             padding: 5px 0 5px 10px;
-            width: 60px;
+            width: 50px;
             overflow: auto;
             margin-left: 730px;
-            bottom: -370px;
+            bottom: -350px;
           }
           .label {
             display: block;
@@ -413,10 +413,10 @@ p{
 
           .back-buttons {
             position: absolute;
-            text-indent: -15px;
+            text-indent: 0px;
             padding: 5px 0 5px 10px;
-            width: 53px;
-            overflow: auto;
+            width: 10px;
+           
             margin-left: 730px;
             top: 630px;
           }
