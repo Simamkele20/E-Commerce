@@ -5,24 +5,35 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
 :root{
     --primary:#e1b382;
     --secondary: #c89666;
     --awesome:  rgba(253, 253, 253, 0.737);
 }
 
+header , footer{
+  background: var(--primary) linear-gradient(to right),
+  var(--secondary);
+  background-blend-mode: darken;
+
+}
+
+
 ul {
     list-style-type: none;
-    margin: 0;
+    margin-left: 1100px;
     padding: 0;
     overflow: hidden;
     background-color: #333;
     position: -webkit-sticky;
   position: fixed;
   top: 0;
+ 
   }
   
-  li {
+ ul li {
     float: left;
   }
   
@@ -412,7 +423,6 @@ p{
 
 
           .back-buttons {
-            position: absolute;
             text-indent: 0px;
             padding: 5px 0 5px 10px;
             width: 10px;
